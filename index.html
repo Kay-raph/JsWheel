@@ -18,7 +18,7 @@
           
               <div class="arrow">&#10148;</div> -->
           
-              <canvas id="canvas" width="300" height="300">
+              <canvas id="canvas" width="400" height="400">
                 
               </canvas>
           
@@ -51,32 +51,32 @@ canvas.onclick = function (e) {
     window.location = "img/ausge.png";
     theWheel.draw();
     clickedWhat.innerText = segmentImage.text;
-  } else if (segmentImage.text == "Tom") {
-    window.location = "img/image-3.png";
+  } else if (segmentImage.text == "Beschaemt") {
+    window.location = "img/bes.png";
     theWheel.draw();
     clickedWhat.innerText = segmentImage.text;
-  } else if (segmentImage.text == "Mary") {
-    window.location = "img/image-4.png";
+  } else if (segmentImage.text == "Dankbar") {
+    window.location = "img/Dankbar.png";
     theWheel.draw();
     clickedWhat.innerText = segmentImage.text;
-  } else if (segmentImage.text == "Alex") {
-    window.location = "img/image-5.png";
+  } else if (segmentImage.text == "Frei") {
+    window.location = "img/Frei.png";
     theWheel.draw();
     clickedWhat.innerText = segmentImage.text;
-  } else if (segmentImage.text == "Sarah") {
-    window.location = "img/image-6.png";
+  } else if (segmentImage.text == "Gleichgueltig") {
+    window.location = "img/gleich.png";
     theWheel.draw();
     clickedWhat.innerText = segmentImage.text;
-  } else if (segmentImage.text == "Bruce") {
-    window.location = "img/image-7.png";
-    theWheel.draw();
-    clickedWhat.innerText = segmentImage.text;
-  } else if (segmentImage.text == "Rose") {
-    window.location = "img/image-8.png";
+  } else if (segmentImage.text == "Gluecklich") {
+    window.location = "img/gluck.png";
     theWheel.draw();
     clickedWhat.innerText = segmentImage.text;
   } else if (segmentImage.text == "Hoffnungsvoll") {
-    window.location = "img/image-9.png";
+    window.location = "img/hoff.png";
+    theWheel.draw();
+    clickedWhat.innerText = segmentImage.text;
+  } else if (segmentImage.text == "Missgeachtet") {
+    window.location = "img/miss.png";
 
     theWheel.draw();
     // Update span to say what was clicked.
@@ -105,35 +105,35 @@ let theWheel = new Winwheel({
   segments: [
     {
       image: "img/ausge.png",
-      text: "Jane"
+      text: "Ausgeschlossen"
     },
     {
       image: "img/bes.png",
-      text: "Tom"
+      text: "Beschaemt"
     },
     {
       image: "img/Dankbar.png",
-      text: "Mary"
+      text: "Dankbar"
     },
     {
       image: "img/Frei.png",
-      text: "Alex"
-    },
-    {
-      image: "img/gleich.png",
-      text: "Sarah"
-    },
-    {
-      image: "img/gluck.png",
       text: "Frei"
     },
     {
-      image: "img/hoff.png",
+      image: "img/gleich.png",
+      text: "Gleichgueltig"
+    },
+    {
+      image: "img/gluck.png",
       text: "Gluecklich"
     },
     {
-      image: "img/miss.png",
+      image: "img/hoff.png",
       text: "Hoffnungsvoll"
+    },
+    {
+      image: "img/miss.png",
+      text: "Missgeachtet"
     }
   ],
   // Specify the animation to use.
