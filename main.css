@@ -1,67 +1,75 @@
 body
 {
-    font-family: arial;
+  font-family: 'Reggae one';
+  margin: 50px;
 }
-
-/* Sets the background image for the wheel */
-
-
-/* Do some css reset on selected elements */
-h1
-{
-    margin: 0;
-    font-size: 2.5em;
-    color: #c0a99d;
+h1{
+    color: burlywood;
     font-family: 'Reggae one', cursive;
 }
-
-div.power_controls
-{
-    margin-right:70px;
+.arrow{
+    font-size: 45px;
+    color: crimson;
+    position: absolute;
+    top: 0;
+    transform: rotate(90deg);
 }
 
-div.html5_logo
-{
-    margin-left:70px;
+#spinBUttonBed{
+  position: absolute;
+  background: white;
+  border-radius: 25em;
 }
 
-/* Styles for the power selection controls */
-table.power
-{
-    background-color: #cccccc;
-    cursor: pointer;
-    border:1px solid #333333;
+#spin_button{
+  background: black;
+  cursor: pointer;
+  border-radius: 25em;
 }
 
-table.power th
-{
-    background-color: white;
-    cursor: default;
+.power_controls{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:0;
+  background: transparent;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+    position: absolute;
 }
 
-td.pw1
-{
-    background-color: #6fe8f0;
+/* canvas scale */
+#canvas{
+    border: 5px solid #000000;
+    border-radius: 25em;
+    padding: 2px;
+    width: calc(500px - 0%);
+    object-fit: contain;
 }
 
-td.pw2
-{
-    background-color: #86ef6f;
+.blurrMagic{
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+	filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='3');
+  transition: all 1.75s cubic-bezier(.71,0,.33,1.56) 0ms;
+}
+.blurroff{
+	-webkit-filter: blur(0px);
+	filter: blur(0px);
+	filter:progid:DXImageTransform.Microsoft.Blur(PixelRadius='0');
+  transition: all 4.75s cubic-bezier(.71,0,.33,1.56) 0ms;
 }
 
-td.pw3
-{
-    background-color: #ef6f6f;
+/**MEDIA QUERS**/
+/* 425px or less*/
+@media screen and (max-width: 425px) {
+    #canvas {
+        min-width: 250px;
+        border: 17px solid #000000;
+    }
+    img#spin_button {
+    max-width: calc(4em + 5px);
+    }
 }
 
-/* Style applied to the spin button once a power has been selected */
-.clickable
-{
-    cursor: pointer;
-}
-
-/* Other misc styles */
-.margin_bottom
-{
-    margin-bottom: 5px;
-}

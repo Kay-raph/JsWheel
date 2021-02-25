@@ -2,6 +2,8 @@
     <head>
         <title>Emotion Wheel</title>
         <link rel="stylesheet" href="main.css" type="text/css" />
+        <script type="text/javascript" src="script.js"></script>
+        <script type="text/javascript" src="Winwheel.min.js"></script>
         <script type="text/javascript" src="Winwheel.js"></script>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com"> 
@@ -9,47 +11,228 @@
     </head>
     <body>
         <div align="center">
-            <h1>Body Feel</h1>
-            <br />
-            <table cellpadding="0" cellspacing="0" border="0">
-                <tr>
-                    
-                    <td width="421" height="564" class="the_wheel" align="center" valign="center">
-                        <canvas id="canvas" width="420" height="420">
-                           </canvas>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <script>
-            // Create new wheel object specifying the parameters at creation time.
-            let theWheel = new Winwheel({
-                'numSegments'       : 7,                 // Specify number of segments.
-                'outerRadius'       : 200,               // Set outer radius so wheel fits inside the background.
-                'drawText'          : true,              // Code drawn text can be used with segment images.
-                'textFontSize'      : 16,
-                'textOrientation'   : 'curved',
-                'textAlignment'     : 'inner',
-                'textMargin'        : 90,
-                'textFontFamily'    : 'monospace',
-                'textStrokeStyle'   : 'black',
-                'textLineWidth'     : 3,
-                'textFillStyle'     : 'white',
-                'drawMode'          : 'segmentImage',    // Must be segmentImage to draw wheel using one image per segemnt.
-                'segments'          :                    // Define segments including image and text.
-                [
-                   {'image' : 'Frei.png'},
-                   {'image' : 'Taub.png'},
-                   {'image' : 'Dankbar.png'},
-                   {'image' : 'Verwit.png'},
-                   {'image' : 'Schuldig.png'},
-                   {'image' : 'Skep.png'},
-                   {'image' : 'Frei.png'},
-                   {'image' : 'Frei.png'}
-                ]
+<h1><b>Body Feel</b></h1>
+            <div id="zoom" class="power_controls the_wheel">
+          
+              <!-- <div id="spinBUttonBed"><img id="spin_button" src="https://mikeloucas.com/whealHack/assholesets/spin_off.png" alt="Spin" onClick="startSpin();" /></div>
+          
+              <div class="arrow">&#10148;</div> -->
+          
+              <canvas id="canvas" width="300" height="300">
                 
-            });
+              </canvas>
+          
+            </div>
+          </div>
+          <div class="clk" style="font-family: 'Reggae one', cursive; color: burlywood;">
+               You clicked: <span id="clickedWhat" style="color: crimson;"></span>
+          </div>
+         
 
-        </script>
+    <script>
+        //*click tutorial
+//http://dougtesting.net/winwheel/docs/tut15_get_segment_clicked
+//*other image click tutorial
+//https://stackoverflow.com/questions/2400218/add-link-to-image-dynamically
+
+//**--adding some click tests to the project
+//add code here?
+// Get canvas and span objects.
+let canvas = document.getElementById("canvas");
+let clickedWhat = document.getElementById("clickedWhat");
+
+// Specify click handler for canvas.
+canvas.onclick = function (e) {
+  // Call the getSegmentAt function passing the mouse x and y from the event.
+  let segmentImage = theWheel.getSegmentAt(e.clientX, e.clientY);
+
+  // A pointer to the segment clicked is returned if the user clicked inside the wheel.
+  if (segmentImage.text == "Ausgeschlossen") {
+    window.location = "img/ausge.png";
+    theWheel.draw();
+    clickedWhat.innerText = segmentImage.text;
+  } else if (segmentImage.text == "Tom") {
+    window.location = "img/image-3.png";
+    theWheel.draw();
+    clickedWhat.innerText = segmentImage.text;
+  } else if (segmentImage.text == "Mary") {
+    window.location = "img/image-4.png";
+    theWheel.draw();
+    clickedWhat.innerText = segmentImage.text;
+  } else if (segmentImage.text == "Alex") {
+    window.location = "img/image-5.png";
+    theWheel.draw();
+    clickedWhat.innerText = segmentImage.text;
+  } else if (segmentImage.text == "Sarah") {
+    window.location = "img/image-6.png";
+    theWheel.draw();
+    clickedWhat.innerText = segmentImage.text;
+  } else if (segmentImage.text == "Bruce") {
+    window.location = "img/image-7.png";
+    theWheel.draw();
+    clickedWhat.innerText = segmentImage.text;
+  } else if (segmentImage.text == "Rose") {
+    window.location = "img/image-8.png";
+    theWheel.draw();
+    clickedWhat.innerText = segmentImage.text;
+  } else if (segmentImage.text == "Hoffnungsvoll") {
+    window.location = "img/image-9.png";
+
+    theWheel.draw();
+    // Update span to say what was clicked.
+    clickedWhat.innerText = segmentImage.text;
+  }
+};
+// Also blank clicked what text.
+clickedWhat.innerText = "";
+//**--END some click tests to the project
+
+// Create new wheel object specifying the parameters at creation time.
+let theWheel = new Winwheel({
+  numSegments: 18, // Specify number of segments.
+  outerRadius: 300, // Set outer radius so wheel fits inside the background.
+  drawText: false, // Code drawn text can be used with segment images.
+  textFontSize: 16,
+  textOrientation: "curved",
+  textAlignment: "inner",
+  textMargin: 150,
+  textFontFamily: "monospace",
+  textStrokeStyle: "black",
+  textLineWidth: 3,
+  textFillStyle: "white",
+  drawMode: "segmentImage", // Must be segmentImage to draw wheel using one image per segemnt.
+  // Define segments including image and text.
+  segments: [
+    {
+      image: "img/ausge.png",
+      text: "Jane"
+    },
+    {
+      image: "img/bes.png",
+      text: "Tom"
+    },
+    {
+      image: "img/Dankbar.png",
+      text: "Mary"
+    },
+    {
+      image: "img/Frei.png",
+      text: "Alex"
+    },
+    {
+      image: "img/gleich.png",
+      text: "Sarah"
+    },
+    {
+      image: "img/gluck.png",
+      text: "Frei"
+    },
+    {
+      image: "img/hoff.png",
+      text: "Gluecklich"
+    },
+    {
+      image: "img/miss.png",
+      text: "Hoffnungsvoll"
+    }
+  ],
+  // Specify the animation to use.
+  animation: {
+    type: "spinToStop",
+    duration: 5, // Duration in seconds.
+    spins: 8, // Number of complete spins.
+    callbackFinished: alertPrize
+  }
+});
+
+// Vars used by the code in this page to do power controls.
+let wheelPower = 0;
+let wheelSpinning = false;
+
+// -------------------------------------------------------
+// Function to handle the onClick on the power buttons.
+// -------------------------------------------------------
+
+// -------------------------------------------------------
+// Click handler for spin button.
+// -------------------------------------------------------
+function startSpin() {
+  // Ensure that spinning can't be clicked again while already running.
+  if (wheelSpinning == false) {
+    // Based on the power level selected adjust the number of spins for the wheel, the more times is has
+    // to rotate with the duration of the animation the quicker the wheel spins.
+    if (wheelPower == 1) {
+      theWheel.animation.spins = 3;
+    } else if (wheelPower == 2) {
+      theWheel.animation.spins = 8;
+    } else if (wheelPower == 3) {
+      theWheel.animation.spins = 15;
+    }
+
+    // Disable the spin button so can't click again while wheel is spinning.
+    document.getElementById("spin_button").src =
+      "https://mikeloucas.com/whealHack/assholesets/spin_off.png";
+    document.getElementById("spin_button").className = "";
+
+    // Begin the spin animation by calling startAnimation on the wheel object.
+    theWheel.startAnimation();
+    $("canvas").addClass("blurrMagic");
+    setTimeout(function () {
+      $("canvas").addClass("blurroff");
+    }, 900);
+
+    // Set to true so that power can't be changed and spin button re-enabled during
+    // the current animation. The user will have to reset before spinning again.
+    wheelSpinning = true;
+  }
+}
+
+// -------------------------------------------------------
+// Function for reset button.
+// -------------------------------------------------------
+function resetWheel() {
+  wheelSpinning = false; // Reset to false to power buttons and spin can be clicked again.
+}
+
+// -------------------------------------------------------
+// Called when the spin animation has finished by the callback feature of the wheel because I specified callback in the parameters.
+// note the indicated segment is passed in as a parmeter as 99% of the time you will want to know this to inform the user of their prize.
+// -------------------------------------------------------
+function alertPrize(indicatedSegment) {
+  // Do basic alert of the segment text. You would probably want to do something more interesting with this information.
+  //alert(indicatedSegment.text + ' says Hi');
+
+  window.alert(
+    indicatedSegment.text + " will load \n when you close this window"
+  );
+
+  // if (indicatedSegment.text == "Jane") {
+  //   window.location = "https://www.mikeloucas.com";
+  // }
+  // else if (indicatedSegment.text == "Tom") {
+  //   window.location = "https://www.mikeloucas.com";
+  // }
+  // else if (indicatedSegment.text == "Mary") {
+  //   window.location = "https://www.mikeloucas.com";
+  // }
+  // else if (indicatedSegment.text == "Alex") {
+  //   window.location = "https://www.mikeloucas.com";
+  // }
+  // else if (indicatedSegment.text == "Sarah") {
+  //   window.location = "https://www.mikeloucas.com";
+  // }
+  // else if (indicatedSegment.text == "Bruce") {
+  //   window.location = "https://www.mikeloucas.com";
+  // }
+  // else if (indicatedSegment.text == "Rose") {
+  //   window.location = "https://www.mikeloucas.com";
+  // }
+  // else if (indicatedSegment.text == "Steve") {
+  //   window.location = "https://www.mikeloucas.com";
+  // }
+}
+
+
+    </script>
     </body>
 </html>
