@@ -18,7 +18,7 @@
           
               <div class="arrow">&#10148;</div> -->
           
-              <canvas id="canvas" width="400" height="400">
+              <canvas id="canvas" width="350" height="350">
                 
               </canvas>
           
@@ -91,6 +91,7 @@ clickedWhat.innerText = "";
 let theWheel = new Winwheel({
   numSegments: 18, // Specify number of segments.
   outerRadius: 300, // Set outer radius so wheel fits inside the background.
+  innerRadius: 30,
   drawText: false, // Code drawn text can be used with segment images.
   textFontSize: 16,
   textOrientation: "curved",
@@ -99,7 +100,7 @@ let theWheel = new Winwheel({
   textFontFamily: "monospace",
   textStrokeStyle: "black",
   textLineWidth: 3,
-  textFillStyle: "white",
+  textFillStyle: "Image",
   drawMode: "segmentImage", // Must be segmentImage to draw wheel using one image per segemnt.
   // Define segments including image and text.
   segments: [
@@ -130,6 +131,42 @@ let theWheel = new Winwheel({
     {
       image: "img/hoff.png",
       text: "Hoffnungsvoll"
+    },
+    {
+      image: "img/miss.png",
+      text: "Missgeachtet"
+    },
+    {
+      image: "img/miss.png",
+      text: "Missgeachtet"
+    },
+    {
+      image: "img/miss.png",
+      text: "Missgeachtet"
+    },
+    {
+      image: "img/miss.png",
+      text: "Missgeachtet"
+    },
+    {
+      image: "img/miss.png",
+      text: "Missgeachtet"
+    },
+    {
+      image: "img/miss.png",
+      text: "Missgeachtet"
+    },
+    {
+      image: "img/miss.png",
+      text: "Missgeachtet"
+    },
+    {
+      image: "img/miss.png",
+      text: "Missgeachtet"
+    },
+    {
+      image: "img/miss.png",
+      text: "Missgeachtet"
     },
     {
       image: "img/miss.png",
