@@ -17,14 +17,11 @@ h1{
 
 #spinBUttonBed{
   position: absolute;
-  background: white;
-  border-radius: 25em;
 }
 
-#spin_button{
-  background: black;
+#spin_button img{
+  background: transparent;
   cursor: pointer;
-  border-radius: 25em;
 }
 
 .power_controls{
