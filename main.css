@@ -63,13 +63,16 @@ h1{
 
 /**MEDIA QUERS**/
 /* 425px or less*/
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 791px) {
     #canvas {
-        min-width: 250px;
-        border: 17px solid #000000;
+        min-width: 350px;
+        border: 10px solid #000000;
     }
     img#spin_button {
     max-width: calc(4em + 5px);
+    }
+    h1{
+        font-size: 15px;
     }
 }
 

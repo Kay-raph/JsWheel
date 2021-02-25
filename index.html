@@ -81,69 +81,67 @@ canvas.onclick = function (e) {
     theWheel.draw();
     // Update span to say what was clicked.
     clickedWhat.innerText = segmentImage.text;
-  }
+  } else if (segmentImage.text == "Angesehen") {
+    window.location = "img/anges.png";
+
+    theWheel.draw();
+    // Update span to say what was clicked.
+    clickedWhat.innerText = segmentImage.text;
   } else if (segmentImage.text == "Wuetend") {
     window.location = "img/wutend.png";
 
     theWheel.draw();
     // Update span to say what was clicked.
     clickedWhat.innerText = segmentImage.text;
-  }
-   else if (segmentImage.text == "Provoziert") {
+  } else if (segmentImage.text == "Provoziert") {
     window.location = "img/provo.png";
 
     theWheel.draw();
     // Update span to say what was clicked.
     clickedWhat.innerText = segmentImage.text;
-  }
-   else if (segmentImage.text == "Schikaniert") {
+  } else if (segmentImage.text == "Schikaniert") {
     window.location = "img/schik.png";
 
     theWheel.draw();
     // Update span to say what was clicked.
     clickedWhat.innerText = segmentImage.text;
-  }
-   else if (segmentImage.text == "Schuldig") {
+  } else if (segmentImage.text == "Schuldig") {
     window.location = "img/schul.png";
 
     theWheel.draw();
     // Update span to say what was clicked.
     clickedWhat.innerText = segmentImage.text;
-  }
-   else if (segmentImage.text == "Skeptisch") {
+  } else if (segmentImage.text == "Skeptisch") {
     window.location = "img/skep.png";
 
     theWheel.draw();
     // Update span to say what was clicked.
     clickedWhat.innerText = segmentImage.text;
-  }
-   else if (segmentImage.text == "Taub") {
-    window.location = "img/Taub.png";
+  } else if (segmentImage.text == "Taub") {
+    window.location = "img/taub.png";
 
     theWheel.draw();
     // Update span to say what was clicked.
     clickedWhat.innerText = segmentImage.text;
-  }
-   else if (segmentImage.text == "Traurig") {
+  } else if (segmentImage.text == "Traurig") {
     window.location = "img/trau.png";
 
     theWheel.draw();
     // Update span to say what was clicked.
     clickedWhat.innerText = segmentImage.text;
-  }
-   else if (segmentImage.text == "Veraengstlich") {
+  } else if (segmentImage.text == "Veraengstlich") {
     window.location = "img/vera.png";
 
     theWheel.draw();
     // Update span to say what was clicked.
     clickedWhat.innerText = segmentImage.text;
-  }
-   else if (segmentImage.text == "Verletzlich") {
+  } else if (segmentImage.text == "Verletzlich") {
     window.location = "img/verlet.png";
 
     theWheel.draw();
     // Update span to say what was clicked.
     clickedWhat.innerText = segmentImage.text;
+  }
 };
 // Also blank clicked what text.
 clickedWhat.innerText = "";
