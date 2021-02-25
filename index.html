@@ -237,13 +237,7 @@ let theWheel = new Winwheel({
       text: "Verletzlich"
     }
   ],
-  // Specify the animation to use.
-  animation: {
-    type: "spinToStop",
-    duration: 5, // Duration in seconds.
-    spins: 8, // Number of complete spins.
-    callbackFinished: alertPrize
-  }
+
 });
 
 // Vars used by the code in this page to do power controls.
@@ -284,7 +278,7 @@ function startSpin() {
 
     // Set to true so that power can't be changed and spin button re-enabled during
     // the current animation. The user will have to reset before spinning again.
-    wheelSpinning = true;
+    wheelSpinning = false;
   }
 }
 
@@ -299,41 +293,6 @@ function resetWheel() {
 // Called when the spin animation has finished by the callback feature of the wheel because I specified callback in the parameters.
 // note the indicated segment is passed in as a parmeter as 99% of the time you will want to know this to inform the user of their prize.
 // -------------------------------------------------------
-function alertPrize(indicatedSegment) {
-  // Do basic alert of the segment text. You would probably want to do something more interesting with this information.
-  //alert(indicatedSegment.text + ' says Hi');
-
-  window.alert(
-    indicatedSegment.text + " will load \n when you close this window"
-  );
-
-  // if (indicatedSegment.text == "Jane") {
-  //   window.location = "https://www.mikeloucas.com";
-  // }
-  // else if (indicatedSegment.text == "Tom") {
-  //   window.location = "https://www.mikeloucas.com";
-  // }
-  // else if (indicatedSegment.text == "Mary") {
-  //   window.location = "https://www.mikeloucas.com";
-  // }
-  // else if (indicatedSegment.text == "Alex") {
-  //   window.location = "https://www.mikeloucas.com";
-  // }
-  // else if (indicatedSegment.text == "Sarah") {
-  //   window.location = "https://www.mikeloucas.com";
-  // }
-  // else if (indicatedSegment.text == "Bruce") {
-  //   window.location = "https://www.mikeloucas.com";
-  // }
-  // else if (indicatedSegment.text == "Rose") {
-  //   window.location = "https://www.mikeloucas.com";
-  // }
-  // else if (indicatedSegment.text == "Steve") {
-  //   window.location = "https://www.mikeloucas.com";
-  // }
-}
-
-
     </script>
     </body>
 </html>
